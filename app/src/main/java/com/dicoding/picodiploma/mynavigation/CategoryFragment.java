@@ -39,11 +39,22 @@ public class CategoryFragment extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         Button btnCategoryLifestyle = view.findViewById(R.id.btn_category_lifestyle);
+
+//        btnCategoryLifestyle.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Bundle mBundle = new Bundle();
+//                mBundle.putString(EXTRA_NAME, "Lifestyle");
+//                mBundle.putLong(EXTRA_STOCK, 7);
+//                Navigation.findNavController(view).navigate(R.id.action_categoryFragment_to_detailCategoryFragment, mBundle);
+//            }
+//        });
+
         btnCategoryLifestyle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 CategoryFragmentDirections.ActionCategoryFragmentToDetailCategoryFragment toDetailCategoryFragment = CategoryFragmentDirections.actionCategoryFragmentToDetailCategoryFragment();
-                toDetailCategoryFragment.setName("Sport");
+                toDetailCategoryFragment.setName("Lifestyle");
                 toDetailCategoryFragment.setStock(7);
                 Navigation.findNavController(view).navigate(toDetailCategoryFragment);
             }

@@ -1,10 +1,8 @@
 package com.dicoding.picodiploma.mynavigation;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.navigation.Navigation;
-
 import android.os.Bundle;
-import android.widget.Button;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 public class ProfileActivity extends AppCompatActivity {
 
