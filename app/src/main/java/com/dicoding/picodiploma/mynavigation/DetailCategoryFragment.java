@@ -20,19 +20,9 @@ import android.widget.TextView;
  */
 public class DetailCategoryFragment extends Fragment {
 
-    private TextView tvCategoryName;
-    private TextView tvCategoryDescription;
-    private Button btnProfile;
-    private Button btnShowDialog;
-
-    public static final String EXTRA_NAME = "extra_name";
-    public static final String EXTRA_DESCRIPTION = "extra_description";
-    private String description;
-
     public DetailCategoryFragment() {
         // Required empty public constructor
     }
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -44,20 +34,19 @@ public class DetailCategoryFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        tvCategoryName = view.findViewById(R.id.tv_category_name);
-        tvCategoryDescription = view.findViewById(R.id.tv_category_description);
-        btnProfile = view.findViewById(R.id.btn_profile);
-        btnShowDialog = view.findViewById(R.id.btn_show_dialog);
+        TextView tvCategoryName = view.findViewById(R.id.tv_category_name);
+        TextView tvCategoryDescription = view.findViewById(R.id.tv_category_description);
 
-//        String dataName = getArguments().getString(EXTRA_NAME);
-//        String dataDescription = getArguments().getString(EXTRA_DESCRIPTION);
+//        String dataName = getArguments().getString(CategoryFragment.EXTRA_NAME);
+//        long dataDescription = getArguments().getLong(CategoryFragment.EXTRA_STOCK);
 
         String dataName = DetailCategoryFragmentArgs.fromBundle(getArguments()).getName();
-        String dataDescription = DetailCategoryFragmentArgs.fromBundle(getArguments()).getDescription();
+        Long dataDescription = DetailCategoryFragmentArgs.fromBundle(getArguments()).getStock();
 
         tvCategoryName.setText(dataName);
-        tvCategoryDescription.setText(dataDescription);
+        tvCategoryDescription.setText("Stock : "+dataDescription);
 
+        Button btnProfile = view.findViewById(R.id.btn_profile);
         btnProfile.setOnClickListener(
                 Navigation.createNavigateOnClickListener(R.id.action_detailCategoryFragment_to_homeFragment, null)
         );

@@ -40,12 +40,12 @@ public class HomeFragment extends Fragment {
         Button btnCategory = view.findViewById(R.id.btn_category);
         Button btnProfile = view.findViewById(R.id.btn_profile);
         btnCategory.setOnClickListener(
-                Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_categoryFragment, null)
+                Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_categoryFragment)
         );
         btnProfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_profileActivity, null);
+                Navigation.findNavController(view).navigate(R.id.action_homeFragment_to_profileActivity);
             }
         });
     }

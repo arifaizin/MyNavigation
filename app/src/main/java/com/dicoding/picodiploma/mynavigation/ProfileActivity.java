@@ -13,9 +13,5 @@ public class ProfileActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
 
-        Button btnHome = findViewById(R.id.btn_home);
-        btnHome.setOnClickListener(
-                Navigation.createNavigateOnClickListener(R.id.action_homeFragment_to_categoryFragment, null)
-        );
     }
 }
